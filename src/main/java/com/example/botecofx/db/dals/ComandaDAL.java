@@ -127,7 +127,7 @@ public class ComandaDAL implements IDAL<Comanda> {
                 comanda = new Comanda(rs.getInt("com_id"), rs.getInt("com_numero"),
                         rs.getString("com_desc"), rs.getDate("com_data").toLocalDate(),
                         rs.getDouble("com_valor"), rs.getString("com_status").charAt(0),
-                        new GarconDAL().get(rs.getInt("gar_id")));
+                        new GarcomDAL().get(rs.getInt("gar_id")));
                 sql="SELECT * FROM item WHERE com_id="+id;
                 ResultSet rs2=SingletonDB.getConexao().consultar(sql);
                 while(rs2.next())
@@ -153,7 +153,7 @@ public class ComandaDAL implements IDAL<Comanda> {
                 Comanda comanda = new Comanda(rs.getInt("com_id"), rs.getInt("com_numero"),
                         rs.getString("com_desc"), rs.getDate("com_data").toLocalDate(),
                         rs.getDouble("com_valor"), rs.getString("com_status").charAt(0),
-                        new GarconDAL().get(rs.getInt("gar_id")));
+                        new GarcomDAL().get(rs.getInt("gar_id")));
                 sql="SELECT * FROM item WHERE com_id="+comanda.getId();
                 ResultSet rs2=SingletonDB.getConexao().consultar(sql);
                 while(rs2.next())

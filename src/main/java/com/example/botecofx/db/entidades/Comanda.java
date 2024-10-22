@@ -12,11 +12,11 @@ public class Comanda {
     private LocalDate data;
     private double valor;
     private char status;// A:aberta F:fechada C:cancelada
-    private Garcon garcon;
+    private Garcom garcon;
     private List<Pagamento> pagamentos;
     private List<Item> itens;
 
-    public Comanda(int id, int numero, String descricao, LocalDate data, double valor, char status, Garcon garcon) {
+    public Comanda(int id, int numero, String descricao, LocalDate data, double valor, char status, Garcom garcon) {
         this.id = id;
         this.numero = numero;
         this.descricao = descricao;
@@ -28,7 +28,7 @@ public class Comanda {
         itens=new ArrayList<>();
     }
 
-    public Comanda(int numero, String descricao, LocalDate data, double valor, char status, Garcon garcon) {
+    public Comanda(int numero, String descricao, LocalDate data, double valor, char status, Garcom garcon) {
         this(0,numero,descricao,data,valor,status,garcon);
     }
 
@@ -84,11 +84,11 @@ public class Comanda {
         this.status = status;
     }
 
-    public Garcon getGarcon() {
+    public Garcom getGarcon() {
         return garcon;
     }
 
-    public void setGarcon(Garcon garcon) {
+    public void setGarcon(Garcom garcon) {
         this.garcon = garcon;
     }
 

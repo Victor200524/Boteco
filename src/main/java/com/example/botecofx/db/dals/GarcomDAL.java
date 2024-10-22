@@ -24,7 +24,7 @@ public class GarcomDAL implements IDAL<Garcom> {
         sql = sql.replace("#5", entidade.getCidade());
         sql = sql.replace("#6", entidade.getUf());
         sql = sql.replace("#7", entidade.getFone());
-        sql = sql.replace("#8", entidade.getFoto());  // Supondo que o campo foto exista
+        //sql = sql.replace("#8", entidade.getFoto());  // Supondo que o campo foto exista
         sql = sql.replace("#9", entidade.getNumero());
 
         return SingletonDB.getConexao().manipular(sql);

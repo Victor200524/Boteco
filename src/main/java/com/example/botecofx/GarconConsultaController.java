@@ -2,7 +2,6 @@ package com.example.botecofx;
 
 import com.example.botecofx.db.dals.GarcomDAL;
 import com.example.botecofx.db.entidades.Garcom;
-import com.example.botecofx.db.entidades.Garcon;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -24,19 +23,19 @@ public class GarconConsultaController implements Initializable {
     public static Garcom garcom = null;
 
     @FXML
-    private TableColumn<Garcon, String> col_Cidade;
+    private TableColumn<Garcom, String> col_Cidade;
 
     @FXML
-    private TableColumn<Garcon, String> col_Fone;
+    private TableColumn<Garcom, String> col_Fone;
 
     @FXML
-    private TableColumn<Garcon, String> col_ID;
+    private TableColumn<Garcom, String> col_ID;
 
     @FXML
-    private TableColumn<Garcon, String> col_Nome;
+    private TableColumn<Garcom, String> col_Nome;
 
     @FXML
-    private TableView<Garcon> tabela;
+    private TableView<Garcom> tabela;
 
     @FXML
     private TextField tfFiltro;
@@ -77,16 +76,16 @@ public class GarconConsultaController implements Initializable {
     }
 
     private void preencherTabela(String filtro) {
-        List<Garcon> garconList = new ArrayList<>(); //garconDAL.get(filtro);
-        garconList.add(new Garcon(1,"Zé","212121","19805330","","","Alvares Machado","SP",""));
-        garconList.add(new Garcon(1,"Zé","212121","19805330","","","Alvares Machado","SP",""));
+        List<Garcom> garconList = new ArrayList<>(); //garconDAL.get(filtro);
+        garconList.add(new Garcom(1,"Zé","212121","19805330","","","Alvares Machado","SP",""));
+        garconList.add(new Garcom(1,"Zé","212121","19805330","","","Alvares Machado","SP",""));
         tabela.setItems(FXCollections.observableArrayList(garconList));
     }
 
     @FXML
     void onExcluir(ActionEvent event) {
         if(tabela.getSelectionModel().getSelectedIndex() >= 0){
-            Garcon garcom = tabela.getSelectionModel().getSelectedItem();
+            Garcom garcom = tabela.getSelectionModel().getSelectedItem();
             Alert alert =new Alert(Alert.AlertType.CONFIRMATION);
             alert.setContentText("Deseja realmente excluir o garçom: " + garcom.getNome());
             alert.showAndWait();
